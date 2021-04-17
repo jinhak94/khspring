@@ -1,0 +1,7 @@
+package com.kh.spring.demo.model.dao;
+
+public class DemoDaoImpl implements DemoDao{
+
+	private SqlSessionTemplate session;
+	
+}

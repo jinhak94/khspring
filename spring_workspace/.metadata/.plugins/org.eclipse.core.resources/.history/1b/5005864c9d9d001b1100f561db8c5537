@@ -1,0 +1,16 @@
+package com.kh.spring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class SpringBeanMain {
+	public static void main(String[] args) {
+		//1. spring applicationContext(Bean Factory)를 생성
+		ApplicationContext applicationContext = 
+				new ClassPathXmlApplicationContext("application-context.xml");
+		
+		//2. ApplicationContext에 bean 요청
+		
+		
+	}
+}

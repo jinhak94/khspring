@@ -1,0 +1,6 @@
+package com.kh.spring.demo.controller;
+
+@Controller
+public class DemoController {
+
+}

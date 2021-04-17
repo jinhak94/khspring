@@ -1,0 +1,9 @@
+package com.kh.spring.tv.model.vo;
+
+public class LgTv implements Tv {
+
+	public void powerOn() {
+		System.out.println("LgTV의 전원을 켰습니다.");
+	}
+
+}

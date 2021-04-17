@@ -1,0 +1,10 @@
+package com.kh.spring.tv.model.vo;
+
+public class SamsungTv implements Tv {
+
+	public void powerOn() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

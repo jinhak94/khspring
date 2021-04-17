@@ -1,0 +1,10 @@
+package com.kh.spring.demo.model.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class DemoDaoImpl implements DemoDao{
+
+	//@Autowired
+	//private SqlSessionTemplate session;
+	
+}

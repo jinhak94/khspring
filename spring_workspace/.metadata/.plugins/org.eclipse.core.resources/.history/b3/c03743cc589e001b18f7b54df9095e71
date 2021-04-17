@@ -1,0 +1,6 @@
+package com.kh.spring.demo.model.service;
+
+@Component
+public class DemoServiceImpl implements DemoService{
+
+}

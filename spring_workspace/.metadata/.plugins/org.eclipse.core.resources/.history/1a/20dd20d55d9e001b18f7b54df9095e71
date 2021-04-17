@@ -1,0 +1,40 @@
+package com.kh.spring.demo.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.kh.spring.demo.model.service.DemoService;
+
+@Controller
+public class DemoController {
+	
+	@Autowired
+	private DemoService demoService; // = new DemoServiceImpl();
+
+	/**
+	 * 사용자 요청 url에 따라 호출되는 메소드
+	 * @return
+	 */
+	@RequestMapping("/demo/devForm.do")
+	public String devForm() {
+		return "demo/devForm";
+	}
+	
+	@RequestMapping("/demo/dev1.do")
+	public String dev1(HttpServletRequest request, HttpServletResponse response) {
+		String name = request.getParameter("name");
+		int career = Integer.valueOf(request.getParameter("career"));
+		String email = request.getParameter("email");
+		String gender = request.getParameter("gender");
+		String[] lang = request.getParameterValues("lang");
+		
+		Dev dev = new Dev(0, name, career, email, gender, lang);	
+		
+		return "demo/devResult";
+	}
+	
+}

@@ -1,0 +1,15 @@
+package com.kh.spring;
+
+import com.kh.spring.tv.model.vo.LgTv;
+import com.kh.spring.tv.model.vo.Tv;
+
+public class SpringBeanMain {
+	public static void main(String[] args) {
+		//1. spring applicationContext(Bean Factory)를 생성
+		ApplicationContext applicationContext = 
+		
+		//2. ApplicationContext에 bean 요청
+		
+		
+	}
+}

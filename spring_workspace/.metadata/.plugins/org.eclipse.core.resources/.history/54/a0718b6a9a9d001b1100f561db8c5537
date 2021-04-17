@@ -1,0 +1,12 @@
+package com.kh.spring.tv.model.vo;
+
+import com.kh.spring.tv.model.vo;
+
+public class LgTv extends vo implements Tv {
+
+	public void powerOn() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

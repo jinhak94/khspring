@@ -1,0 +1,9 @@
+package com.kh.spring.tv.model.vo;
+
+public class SamsungTv implements Tv {
+
+	public void powerOn() {
+		System.out.println("SamsungTv의 전원을 켰습니다.");
+	}
+
+}

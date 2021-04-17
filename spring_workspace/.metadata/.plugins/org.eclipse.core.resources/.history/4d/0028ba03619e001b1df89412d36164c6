@@ -1,0 +1,15 @@
+package com.kh.spring.demo.model.vo;
+
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public class Dev {
+	
+	private int no;
+	private String name;
+	private int career;
+	private String email;
+	private String gender;
+	private String[] lang;
+
+}

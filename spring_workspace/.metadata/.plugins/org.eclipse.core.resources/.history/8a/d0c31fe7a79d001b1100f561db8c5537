@@ -1,0 +1,22 @@
+package com.kh.spring.tv.model.vo;
+
+public class SamsungTv implements Tv {
+
+	//RemoteControl빈을 생성해서 대신 setting 요청
+	//application-context.xml에서 해당타입의 bean을 찾아 의존객체 주입함.
+	@Autowired
+	private RemoteControl remocon;
+		
+	public SamsungTv() {
+		System.out.println("SamsungTv 객체 생성!");
+	}
+	
+	public void powerOn() {
+		System.out.println("SamsungTv의 전원을 켰습니다.");
+	}
+
+	public void changeChannel(int no) {
+		this.remocon.changeChannel(no);
+	}
+	
+}

@@ -1,0 +1,11 @@
+package com.kh.spring;
+
+import com.kh.spring.tv.model.vo.LgTv;
+import com.kh.spring.tv.model.vo.Tv;
+
+public class SpringBeanMain {
+	public static void main(String[] args) {
+		Tv lgtv = new LgTv();
+		lgtv.powerOn();
+	}
+}

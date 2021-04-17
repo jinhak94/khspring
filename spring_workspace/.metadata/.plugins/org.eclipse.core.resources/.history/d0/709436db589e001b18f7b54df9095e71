@@ -1,0 +1,6 @@
+package com.kh.spring.demo.model.dao;
+
+@Repository
+public interface DemoDao {
+
+}
