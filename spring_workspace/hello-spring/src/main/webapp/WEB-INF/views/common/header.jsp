@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,12 @@
 <!-- 사용자작성 css -->
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css" />
 
+<%-- RedirectAttributes.addFlashAttribute의 저장된 속성값 사용(1회용) --%>
+<c:if test="${not empty msg}">
+<script>
+alert("${msg}");
+</script>	
+</c:if>
 </head>
 <body>
 <div id="container">
@@ -37,6 +44,7 @@
 				<ul class="navbar-nav mr-auto">
 			    	<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/board/boardList.do">게시판</a></li>
+                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/memo/memo.do">메모 AOP</a></li>
                     <!-- 데모메뉴 DropDown -->
                     <!--https://getbootstrap.com/docs/4.1/components/navbar/#supported-content-->
                     <li class="nav-item dropdown">
@@ -49,9 +57,18 @@
                         </div>
 				    </li>
 			    </ul>
-			    <button class="btn btn-outline-success my-2 my-sm-0" type="button" >로그인</button>
+			    <%-- 1. 로그인 하지 않은 경우 --%>
+			    <c:if test="${loginMember == null}">
+			    <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/member/login.do';">로그인</button>
                 &nbsp;
-                <button class="btn btn-outline-success my-2 my-sm-0" type="button">회원가입</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/member/memberEnroll.do';">회원가입</button>
+				</c:if>
+				<%-- 2. 로그인한 경우 --%>
+				<c:if test="${loginMember != null}">
+					<span><a href="${pageContext.request.contextPath}/member/memberDetail.do">${loginMember.name}</a>님, 안녕하세요.</span>
+				    <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/member/logout.do';">로그아웃</button>
+				</c:if>
+
 			 </div>
 		</nav>
 	</header>

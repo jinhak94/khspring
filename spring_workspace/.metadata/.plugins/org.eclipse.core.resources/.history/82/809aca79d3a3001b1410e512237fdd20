@@ -1,0 +1,9 @@
+package com.kh.spring.memo.model.service;
+
+import com.kh.spring.memo.controller.Memo;
+
+public interface MemoService {
+
+	Memo selectMemoList();
+
+}

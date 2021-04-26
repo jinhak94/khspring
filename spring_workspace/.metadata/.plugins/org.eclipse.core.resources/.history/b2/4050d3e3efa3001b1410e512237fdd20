@@ -1,0 +1,15 @@
+package com.kh.spring.common.aop;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class LoggerAspect {
+	
+	public Object aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
+		Object obj = joinPoint.proceed(); // 주업무 실행
+		return obj;
+//		return joinPoint.proceed(); // 주업무 실행
+	}
+}

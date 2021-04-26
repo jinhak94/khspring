@@ -1,0 +1,14 @@
+package com.kh.spring.log;
+
+import org.slf4j.LoggerFactory;
+
+public class Slf4jTest {
+	
+	private static final Logeer log = 
+			LoggerFactory.getLogger(Slf4jTest.class);
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

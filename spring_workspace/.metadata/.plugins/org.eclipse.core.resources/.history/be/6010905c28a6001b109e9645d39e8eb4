@@ -1,0 +1,22 @@
+package com.kh.spring.common.aop;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Component
+@Aspect
+@Slf4j
+public class LoginLoggerAspect {
+	//..는 하위 패키지 갯수를 따지지 않겠다는 의미
+	@Pointcut("execution(* com.kh.spring.member.controller..login(..)")
+	public void pointCut() {}
+
+	@AfterReturning
+	public void advice(JoinPoint joinPoint, Object returnObj) {
+				
+	}
+	
+}

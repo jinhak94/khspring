@@ -1,0 +1,22 @@
+package com.kh.spring.log;
+
+import org.slf4j.Logger;
+
+/**
+ * 
+ * logging 구현체인 Log4j를 직접 사용한다.
+ * @author jinha
+ *
+ */
+public class Log4jTest {
+
+	private Logger logger;
+	
+	public static void main(String[] args) {
+		new Log4jTest().logTest();
+	}
+	
+	private void logTest() {
+		
+	}
+}

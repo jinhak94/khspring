@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demo"> <!-- #6.2 mapper location에 포함됨 -->
+<!-- Navigator view의 target/classes/mapper/**/*.xml -->
+	<insert id="insertDev">
+	<!-- String -> char, varchar2
+	int, double -> number
+	Date -> date
+	String[] -> varchar2 -->
+		insert into 
+			dev
+		values(
+			seq_dev_no.nextval,
+			#{name},
+			#{career},
+			#{email},
+			#{gender},
+			#{lang}
+		)
+	</insert>
+	<select id="selectDevList" resultType="dev">
+		select
+			*
+		from
+			dev
+		order by
+			no desc
+	</select>
+	<select id="selectDevOne" resultType="dev">
+		select
+			*
+		from
+			dev
+		where no = #{no}
+	</select>
+</mapper>

@@ -1,0 +1,21 @@
+package com.kh.spring.memo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.kh.spring.member.model.service.MemberService;
+
+@Controller
+@RequestMapping("/memo")
+public class MemoController {
+	
+	private MemoService memoService;
+	
+	@GetMapping("/memo.do") //2
+	public String memoList() {
+		
+		
+		return "memo/memo";
+	}
+}

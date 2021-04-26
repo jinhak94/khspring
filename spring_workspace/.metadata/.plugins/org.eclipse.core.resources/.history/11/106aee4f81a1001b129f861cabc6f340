@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member"> <!-- #6.2 mapper location에 포함됨 -->
+<!-- Navigator view의 target/classes/mapper/**/*.xml -->
+	<insert id="memberEnroll" resultType="member">
+	<!-- String -> char, varchar2
+	int, double -> number
+	Date -> date
+	String[] -> varchar2 
+		private String id;
+	private String password;
+	private String name;
+	private String gender;
+	private Date birthday;
+	private String email;
+	private String phone;
+	private String address;
+	private String[] hobby;
+	private Date enrollDate;
+	private boolean enabled;
+	-->
+		insert into 
+			member
+		values(
+			#{id},
+			#{password},
+			#{name},
+			#{gender},
+			#{birthday},
+			#{email}
+			#{phone}
+			#{address}
+			#{hobby}
+		)
+	</insert>
+
+</mapper>

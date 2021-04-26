@@ -1,0 +1,40 @@
+package com.kh.spring.member.model.service;
+
+import java.util.List;
+
+import com.kh.spring.demo.model.service.DemoService;
+import com.kh.spring.demo.model.vo.Dev;
+
+public class MemberServiceImpl implements DemoService {
+
+	@Override
+	public int insertDev(Dev dev) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Dev> selectDevList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Dev selectDevOne(int no) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updateDevOne(Dev dev) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteDevOne(int no) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

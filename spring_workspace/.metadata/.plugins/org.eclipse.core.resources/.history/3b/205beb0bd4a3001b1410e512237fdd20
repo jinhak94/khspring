@@ -1,0 +1,24 @@
+package com.kh.spring.memo.model.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kh.spring.member.model.dao.MemberDao;
+import com.kh.spring.memo.model.vo.Memo;
+
+@Service
+public class MemoServiceImpl implements MemoService {
+
+	@Autowired
+	private MemberDao memberDao;
+	
+	@Override
+	public List<Memo> selectMemoList() {
+		// TODO Auto-generated method stub
+		return memberDao.selectMemoList();
+	}
+
+
+}

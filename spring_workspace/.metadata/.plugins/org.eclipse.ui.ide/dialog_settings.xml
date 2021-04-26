@@ -120,7 +120,7 @@
 		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
 	</section>
 	<section name="org.eclipse.text.quicksearch.internal.ui.QuickSearchDialog.DIALOG_SETTINGS">
-		<item key="LAST_QUERY" value="#1"/>
+		<item key="LAST_QUERY" value="MM"/>
 		<item key="PATH_FILTER" value=""/>
 		<item key="CASE_SENSITIVE" value="true"/>
 		<item key="KEEP_OPEN" value="false"/>
@@ -134,7 +134,7 @@
 			<item value="285"/>
 		</list>
 		<section name="DialogBoundsSettings">
-			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_HEIGHT" value="665"/>
 			<item key="DIALOG_WIDTH" value="600"/>
 			<item key="DIALOG_X_ORIGIN" value="188"/>
 			<item key="DIALOG_Y_ORIGIN" value="185"/>

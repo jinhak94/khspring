@@ -1,0 +1,34 @@
+package com.kh.spring.memo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.kh.spring.member.controller.MemberController;
+import com.kh.spring.memo.model.service.MemoService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Controller
+@RequestMapping("/memo")
+public class MemoController {
+	
+	private MemoService memoService;
+	
+	@GetMapping("/memo.do") //2
+	public String memoList() {
+		Memo memo;
+		try {
+			memo = memoService.
+		}catch(Exception e){
+			//1. 로깅작업
+			log.error(e.getMessage(), e);
+			//2. 다시 spring container에 던질 것.
+			throw e;
+		}
+		
+		
+		return "memo/memo";
+	}
+}

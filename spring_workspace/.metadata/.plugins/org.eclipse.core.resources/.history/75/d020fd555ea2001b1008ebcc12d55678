@@ -1,0 +1,15 @@
+package com.kh.spring.common.interceptor;
+
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+/**
+ * HandlerInterceptor
+ *
+ * 1. handler 전처리 - preHandle
+ * 2. handler 후처리 - postHandle (ModelAndView 참조 가능)
+ * 3. view단 후처리 - afterCompletion
+ *
+ */
+public class LoggerInterceptor extends HandlerInterceptorAdapter {
+
+}

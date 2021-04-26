@@ -10,6 +10,6 @@
     <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
     <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;C:\Workspaces\spring_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0&quot; -Dcatalina.home=&quot;C:\dev\apache-tomcat-8.5.61\apache-tomcat-8.5.61&quot; -Dwtp.deploy=&quot;C:\Workspaces\spring_workspace&quot; -Duser.language=en -Duser.region=US"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;C:\Workspaces\spring_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0&quot; -Dcatalina.home=&quot;C:\dev\apache-tomcat-8.5.61\apache-tomcat-8.5.61&quot; -Dwtp.deploy=&quot;C:\Workspaces\spring_workspace&quot; -Duser.language=en -Duser.region=US-javaagent:&quot;C:\dev\maven\repository\org\springframework\springloaded\1.2.8.RELEASE\springloaded-1.2.8.RELEASE.jar&quot; -noverify"/>
     <stringAttribute key="server-id" value="hello-spring-server"/>
 </launchConfiguration>

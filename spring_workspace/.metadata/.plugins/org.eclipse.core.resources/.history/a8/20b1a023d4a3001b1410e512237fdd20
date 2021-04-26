@@ -1,0 +1,15 @@
+package com.kh.spring.memo.model.dao;
+
+import java.util.List;
+
+import com.kh.spring.memo.model.vo.Memo;
+
+public class MemoDaoImpl implements MemoDao {
+
+	@Override
+	public List<Memo> selectMemoList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

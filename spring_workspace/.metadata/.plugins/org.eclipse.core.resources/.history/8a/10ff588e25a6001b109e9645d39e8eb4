@@ -1,0 +1,23 @@
+package com.kh.spring.common.aop;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Component
+@Aspect
+@Slf4j
+public class RuntimeCheckAspect {
+	public void pointcut() {}
+	
+	puiblic Object aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
+		//joinPoint 실행전
+		
+		Object obj = joinPoint.proceed();
+		//joinPoint 실행후
+		
+		return obj;
+	}
+}

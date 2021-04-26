@@ -1,0 +1,11 @@
+package com.kh.spring.memo.model.service;
+
+public class MemoServiceImpl implements MemoService {
+
+	@Override
+	public Memo selectMemoList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

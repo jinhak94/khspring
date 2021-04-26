@@ -2,4 +2,8 @@
 <typeInfoHistroy>
     <typeInfo handle="=hello-bean/C:\/dev\/maven\/repository\/org\/springframework\/spring-aop\/5.1.5.RELEASE\/spring-aop-5.1.5.RELEASE.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-aop=/=/maven.version=/5.1.5.RELEASE=/=/maven.scope=/compile=/&lt;org.springframework.aop(SpringProxy.class[SpringProxy" modifiers="1537" timestamp="1618456939440"/>
     <typeInfo handle="=hello-bean/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.kh.spring.tv.model.vo{Tv.java[Tv" modifiers="513" timestamp="1618457198352"/>
+    <typeInfo handle="=hello-spring/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.kh.spring.demo.model.service{DemoService.java[DemoService" modifiers="513" timestamp="1618826132704"/>
+    <typeInfo handle="=hello-spring/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.kh.spring.member.model.service{MemberService.java[MemberService" modifiers="513" timestamp="1619136742582"/>
+    <typeInfo handle="=hello-spring/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.kh.spring.memo.model.service{MemoService.java[MemoService" modifiers="513" timestamp="1619142806110"/>
+    <typeInfo handle="=hello-spring/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.kh.spring.memo.model.dao{MemoDao.java[MemoDao" modifiers="513" timestamp="1619142829589"/>
 </typeInfoHistroy>

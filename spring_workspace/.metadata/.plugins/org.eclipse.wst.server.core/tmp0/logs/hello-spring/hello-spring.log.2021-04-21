@@ -1,0 +1,694 @@
+[2021-04-21 12:42:13]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270) - Root WebApplicationContext: initialization started
+[2021-04-21 12:42:16]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) - Root WebApplicationContext initialized in 2962 ms
+[2021-04-21 12:42:16]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:524) - Initializing Servlet 'appServlet'
+[2021-04-21 12:42:18]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:546) - Completed initialization in 2366 ms
+[2021-04-21 12:42:43]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 12:42:45]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 12:42:50]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 12:42:50]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:148) - id = admin, password = 1234
+[2021-04-21 12:42:51]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:151) - member - Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 12:42:51]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:152) - encodedPassword = $2a$10$u/jfhiGFOQLy3qtsg0TELuIeH8uzHXFfFfNWQ9Z5ZTe.bTbz5q5e6
+[2021-04-21 12:42:51]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 12:45:50]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 12:45:50]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 12:45:52]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 12:45:55]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 12:45:56]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 12:46:34]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 12:46:34]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:92) - member = Member(id=admin, password=1234, name=관리자, gender=M, birthday=2021-03-30, email=honggd@naver.com, phone=01010510305, address=인천, hobby=[운동, 등산], enrollDate=null, enabled=false)
+[2021-04-21 12:46:34]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:97) - rawPassword = 1234
+[2021-04-21 12:46:34]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:98) - encodedPassword = $2a$10$UTMR19qV5YHT0JkX14YCo.Env8npadxh0T.fpYFhfkHkQKhKY8tWu
+[2021-04-21 12:46:35]ERROR: com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:108) - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into     member   values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    default,    default   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+; ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into     member   values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    default,    default   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+; ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:242)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy18.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.spring.member.model.dao.MemberDaoImpl.memberEnroll(MemberDaoImpl.java:17)
+	at com.kh.spring.member.model.service.MemberServiceImpl.memberEnroll(MemberServiceImpl.java:17)
+	at com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1634)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1010)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1315)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3677)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1374)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 48 more
+[2021-04-21 12:46:39]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 12:46:46]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 12:46:46]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:92) - member = Member(id=admin, password=1355, name=관리자, gender=M, birthday=2021-03-30, email=honggd@naver.com, phone=01010510305, address=인천, hobby=[운동, 등산], enrollDate=null, enabled=false)
+[2021-04-21 12:46:46]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:97) - rawPassword = 1355
+[2021-04-21 12:46:46]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:98) - encodedPassword = $2a$10$M1/SIks8TF.NA7RCbrzyE.42xarJ0EL4BkDYXf7hZm98bei0Ib6KK
+[2021-04-21 12:46:46]ERROR: com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:108) - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into     member   values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    default,    default   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+; ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into     member   values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    default,    default   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+; ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:242)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy18.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.spring.member.model.dao.MemberDaoImpl.memberEnroll(MemberDaoImpl.java:17)
+	at com.kh.spring.member.model.service.MemberServiceImpl.memberEnroll(MemberServiceImpl.java:17)
+	at com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1634)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1010)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1315)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3677)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1374)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 48 more
+[2021-04-21 12:46:51]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 13:45:34]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270) - Root WebApplicationContext: initialization started
+[2021-04-21 13:45:37]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) - Root WebApplicationContext initialized in 3053 ms
+[2021-04-21 13:45:37]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:524) - Initializing Servlet 'appServlet'
+[2021-04-21 13:45:40]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:546) - Completed initialization in 2704 ms
+[2021-04-21 13:45:48]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 13:45:48]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:92) - member = Member(id=admin, password=1234, name=관리자, gender=M, birthday=2021-03-30, email=honggd@naver.com, phone=01010510305, address=인천, hobby=[운동, 등산], enrollDate=null, enabled=false)
+[2021-04-21 13:45:48]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:97) - rawPassword = 1234
+[2021-04-21 13:45:48]INFO : com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:98) - encodedPassword = $2a$10$Hf7x7pV.04yg.DzytZfPI.64.tM6fUNAeTACsg/0KnQkXk.PYUryy
+[2021-04-21 13:45:50]ERROR: com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:108) - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into     member   values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    default,    default   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+; ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into     member   values(    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    ?,    default,    default   )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+; ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:242)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy18.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.spring.member.model.dao.MemberDaoImpl.memberEnroll(MemberDaoImpl.java:17)
+	at com.kh.spring.member.model.service.MemberServiceImpl.memberEnroll(MemberServiceImpl.java:17)
+	at com.kh.spring.member.controller.MemberController.memberEnroll(MemberController.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1634)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SPRING.PK_MEMBER_ID) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:440)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:837)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:445)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1010)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1315)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3677)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1374)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 48 more
+[2021-04-21 13:45:50]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:08:19]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270) - Root WebApplicationContext: initialization started
+[2021-04-21 14:08:22]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) - Root WebApplicationContext initialized in 2995 ms
+[2021-04-21 14:08:22]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:524) - Initializing Servlet 'appServlet'
+[2021-04-21 14:08:24]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:546) - Completed initialization in 2400 ms
+[2021-04-21 14:08:45]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:08:45]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:08:45]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:08:45]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:08:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:08:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:08:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:08:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:09:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:09:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:09:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:09:02]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:09:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:09:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/login"; model={common={adminEmail=admin@spring.kh.com}, modelAndView=ModelAndView [view="member/login"; model={test=hello world}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors, test=hello world}]
+[2021-04-21 14:09:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:09:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:09:21]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:09:21]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:09:21]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:09:21]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:09:21]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:148) - id = admin, password = 1234
+[2021-04-21 14:09:22]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:151) - member - Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 14:09:22]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:152) - encodedPassword = $2a$10$zwTAVuFH8RHOwKKxZ2Qu7uPwU3p60lhxVgneZM.obY1cnv/DJ15O.
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="redirect:/"; model={}]
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:09:22]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={msg=로그인에 성공하셨습니다.}]
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:09:22]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:15:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:15:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:15:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:15:09]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:15:09]INFO : com.kh.spring.member.controller.MemberController.memberDetail(MemberController.java:197) - loginMember = Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 14:15:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:15:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/memberDetail"; model={common={adminEmail=admin@spring.kh.com}, loginMember=Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true), org.springframework.validation.BindingResult.loginMember=org.springframework.validation.BeanPropertyBindingResult: 0 errors, modelAndView=ModelAndView [view="member/memberDetail"; model={}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2021-04-21 14:15:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:15:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/logout.do
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="redirect:/"; model={loginMember=Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true), common={adminEmail=admin@spring.kh.com}, org.springframework.validation.BindingResult.loginMember=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:15:11]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:15:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:15:13]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:15:13]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:15:13]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:15:13]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:15:13]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:36:27]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270) - Root WebApplicationContext: initialization started
+[2021-04-21 14:36:30]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) - Root WebApplicationContext initialized in 2748 ms
+[2021-04-21 14:36:30]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:524) - Initializing Servlet 'appServlet'
+[2021-04-21 14:36:32]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:546) - Completed initialization in 2586 ms
+[2021-04-21 14:36:45]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:36:45]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:36:45]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:36:45]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:36:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:36:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:36:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:36:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:36:48]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:36:48]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:36:48]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:36:48]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:36:48]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:36:48]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/login"; model={common={adminEmail=admin@spring.kh.com}, modelAndView=ModelAndView [view="member/login"; model={test=hello world}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors, test=hello world}]
+[2021-04-21 14:36:48]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:36:49]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:36:51]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:36:51]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:36:51]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:36:51]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:36:51]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:148) - id = admin, password = 1234
+[2021-04-21 14:36:52]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:151) - member - Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 14:36:52]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:152) - encodedPassword = $2a$10$JQuoKEUrf9k4XLd9as19wOPkzkpPeEgzyrrL449D/pwzfBmp26Co.
+[2021-04-21 14:36:52]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:36:52]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="redirect:/"; model={}]
+[2021-04-21 14:36:52]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:36:53]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:36:53]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:36:53]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:36:53]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:36:53]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:36:53]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:36:53]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={msg=로그인에 성공하셨습니다.}]
+[2021-04-21 14:36:53]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:36:53]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:36:57]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:36:57]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:36:57]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:36:57]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:36:57]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:36:57]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:36:57]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:36:57]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:36:59]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:36:59]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:36:59]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:36:59]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:36:59]INFO : com.kh.spring.member.controller.MemberController.memberDetail(MemberController.java:197) - loginMember = Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 14:36:59]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:36:59]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/memberDetail"; model={common={adminEmail=admin@spring.kh.com}, loginMember=Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true), org.springframework.validation.BindingResult.loginMember=org.springframework.validation.BeanPropertyBindingResult: 0 errors, modelAndView=ModelAndView [view="member/memberDetail"; model={}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2021-04-21 14:36:59]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:36:59]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/logout.do
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="redirect:/"; model={loginMember=Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true), common={adminEmail=admin@spring.kh.com}, org.springframework.validation.BindingResult.loginMember=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:37:01]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:37:01]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:37:03]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:37:03]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:37:40]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270) - Root WebApplicationContext: initialization started
+[2021-04-21 14:37:43]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) - Root WebApplicationContext initialized in 3189 ms
+[2021-04-21 14:37:43]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:524) - Initializing Servlet 'appServlet'
+[2021-04-21 14:37:46]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:546) - Completed initialization in 2501 ms
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:37:46]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:37:46]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:40:53]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270) - Root WebApplicationContext: initialization started
+[2021-04-21 14:40:56]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) - Root WebApplicationContext initialized in 3009 ms
+[2021-04-21 14:40:56]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:524) - Initializing Servlet 'appServlet'
+[2021-04-21 14:40:58]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:546) - Completed initialization in 2345 ms
+[2021-04-21 14:41:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:41:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:02]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:41:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:41:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:02]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:05]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:05]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:41:05]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:05]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:41:05]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:05]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/login"; model={common={adminEmail=admin@spring.kh.com}, modelAndView=ModelAndView [view="member/login"; model={test=hello world}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors, test=hello world}]
+[2021-04-21 14:41:05]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:05]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:08]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:08]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:41:08]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:08]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:41:08]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:148) - id = admin, password = 1234
+[2021-04-21 14:41:09]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:151) - member - Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 14:41:09]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:152) - encodedPassword = $2a$10$JUwBkpmWk34L.kcLy990GuP5cDOyFh//TIAzIDvUSBoWgnqeZV1RO
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="redirect:/"; model={}]
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:09]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={msg=로그인에 성공하셨습니다.}]
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:09]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:41:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:11]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:41:11]INFO : com.kh.spring.member.controller.MemberController.memberDetail(MemberController.java:197) - loginMember = Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 14:41:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/memberDetail"; model={common={adminEmail=admin@spring.kh.com}, loginMember=Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true), org.springframework.validation.BindingResult.loginMember=org.springframework.validation.BeanPropertyBindingResult: 0 errors, modelAndView=ModelAndView [view="member/memberDetail"; model={}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2021-04-21 14:41:11]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:12]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/logout.do
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="redirect:/"; model={loginMember=Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true), common={adminEmail=admin@spring.kh.com}, org.springframework.validation.BindingResult.loginMember=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:14]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:16]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={}]
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:16]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:18]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:18]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:41:18]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:18]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:41:18]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:18]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/login"; model={common={adminEmail=admin@spring.kh.com}, modelAndView=ModelAndView [view="member/login"; model={test=hello world}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors, test=hello world}]
+[2021-04-21 14:41:18]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:18]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:41:23]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:41:23]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberEnroll.do
+[2021-04-21 14:41:23]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:41:23]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:41:23]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:41:23]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/memberEnroll"; model={common={adminEmail=admin@spring.kh.com}}]
+[2021-04-21 14:41:23]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:41:23]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:46:08]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270) - Root WebApplicationContext: initialization started
+[2021-04-21 14:46:11]INFO : org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) - Root WebApplicationContext initialized in 3122 ms
+[2021-04-21 14:46:11]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:524) - Initializing Servlet 'appServlet'
+[2021-04-21 14:46:13]INFO : org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:546) - Completed initialization in 2426 ms
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:46:14]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={msg=로그인 후 이용하세요.}]
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:46:14]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:53:36]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:53:36]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:53:36]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:53:36]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:53:36]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:53:36]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/login"; model={common={adminEmail=admin@spring.kh.com}, modelAndView=ModelAndView [view="member/login"; model={test=hello world}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors, test=hello world}]
+[2021-04-21 14:53:36]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:53:36]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:53:40]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:53:40]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/login.do
+[2021-04-21 14:53:40]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:53:40]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:53:40]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:148) - id = admin, password = 1234
+[2021-04-21 14:53:41]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:151) - member - Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 14:53:41]INFO : com.kh.spring.member.controller.MemberController.login(MemberController.java:152) - encodedPassword = $2a$10$lYrv4U.Bp/fG90KHUH4pS.RLeHBozFM2i3WC/1abIgf6vHNNmEUsW
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="redirect:/"; model={}]
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:53:41]INFO : com.kh.spring.HomeController.home(HomeController.java:25) - /요청!
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="forward:/index.jsp"; model={msg=로그인에 성공하셨습니다.}]
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:53:41]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
+[2021-04-21 14:53:43]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:28) - ==================================================
+[2021-04-21 14:53:43]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:29) - /spring/member/memberDetail.do
+[2021-04-21 14:53:43]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.preHandle(LoggerInterceptor.java:30) - ==================================================
+[2021-04-21 14:53:43]DEBUG: com.kh.spring.member.controller.MemberController.common(MemberController.java:74) - @ModelAttribute - common 실행!
+[2021-04-21 14:53:43]INFO : com.kh.spring.member.controller.MemberController.memberDetail(MemberController.java:197) - loginMember = Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true)
+[2021-04-21 14:53:43]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:40) - ==================================================
+[2021-04-21 14:53:43]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:41) - mav = ModelAndView [view="member/memberDetail"; model={common={adminEmail=admin@spring.kh.com}, loginMember=Member(id=admin, password=$2a$10$P3mUTHC3JPZO2Ey82.TbK.fhC4t5UKK2eyJjz.NJHOHisKCDOPumu, name=관리자, gender=F, birthday=1990-12-25, email=admin@naver.com, phone=01012345678, address=서울시 강남구, hobby=[독서], enrollDate=2021-04-20, enabled=true), org.springframework.validation.BindingResult.loginMember=org.springframework.validation.BeanPropertyBindingResult: 0 errors, modelAndView=ModelAndView [view="member/memberDetail"; model={}], org.springframework.validation.BindingResult.modelAndView=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2021-04-21 14:53:43]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.postHandle(LoggerInterceptor.java:42) - ========================== view ====================
+[2021-04-21 14:53:43]DEBUG: com.kh.spring.common.interceptor.LoggerInterceptor.afterCompletion(LoggerInterceptor.java:50) - _________________________________________________
+
