@@ -1,5 +1,10 @@
 package com.kh.spring.common;
 
+import java.io.File;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class HelloSpringUtils {
 	/**
 	 * 
@@ -69,5 +74,30 @@ public class HelloSpringUtils {
 		pageBar.append("</ul></nav>\n");
 		pageBar.append("<script>function paging(pageNo){ location.href = '" + url + "' + pageNo; }</script>");
 		return pageBar.toString();
+	}
+
+	public static File getRenamedFile(String saveDirectory, String oldName) {
+		File newFile = null;
+
+		//파일명 새로 부여 20210216_135645(밀리세컨드) 123(여기다 난수 3자리까지)
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmssSSS_");
+		DecimalFormat df = new DecimalFormat("000"); //30 -> 030 (9는 비우고 0은 채워줌)
+		
+		//확장자 가져오기
+		String ext = "";
+		int dot = oldName.lastIndexOf(".");
+		if(dot > -1)
+			ext = oldName.substring(dot); // .jpg
+		
+		//새로운 파일명
+		String newName = 
+				sdf.format(new Date()) + df.format(Math.random() * 999) + ext;
+		
+		//새로운 파일객체
+		//java.io.File.File(String parent, String child)
+		newFile = new File(saveDirectory, newName);
+		System.out.println("newFile@MvcFileRenamePolicy = " + newFile);
+		
+		return newFile;
 	}
 }

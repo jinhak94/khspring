@@ -190,12 +190,16 @@ order by
 insert into
     attachment
 values(
-    SEQ_ATTACHMENT_NO.nextvarl,
+    SEQ_ATTACHMENT_NO.nextval,
     60,
-    'sample.txt',
-    '20210426_1234115.txt',
-    
+    'abc.txt',
+    '20210426_23452665.txt',
+    default,
+    default,
+    default
 );
+commit;
+select * from attachment;
     
 --1. rownum
 select *

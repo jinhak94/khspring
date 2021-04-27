@@ -1,0 +1,46 @@
+package com.kh.spring.board.model.service;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kh.spring.board.model.dao.BoardDao;
+import com.kh.spring.board.model.vo.Attachment;
+import com.kh.spring.board.model.vo.Board;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+	@Autowired
+	private BoardDao boardDao;
+
+	@Override
+	public List<Board> selectBoardList(Map<String, Object> param) {
+		return boardDao.selectBoardList(param);
+	}
+
+	@Override
+	public int getTotalContents() {
+		return boardDao.getTotalContents();
+	}
+
+	@Override
+	public int boardEnroll(Board board) {
+		int result = 0;
+		//1. board객체 등록
+		result = boardDao.boardEnroll(board);
+		//2. attachment 객체 등록
+		//insert into attachment(no, board_no, original_filename, renamed_filename)
+		//values(seq_attachment_no.nextval, #{boardNo}, #{originalFileName}, #{renamedFileName}
+		if(board.getAttachList()!= null) {
+			for(Attachment attach : board.getAttachList()) {
+				result = boardDao.insertAttachment(attach);
+			}
+		}
+		return result;
+	}
+	
+	
+}

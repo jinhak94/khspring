@@ -18,6 +18,8 @@
    </typeAliases>
 
  	<typeHandlers>
+<!--  			<package name="com.kh.spring.common.typehandler"/> -->
  		<typeHandler handler="com.kh.spring.common.typehandler.StringArrayTypeHandler"/>
+ 		<typeHandler handler="com.kh.spring.common.typehandler.BooleanCharTypeHandler"/>
  	</typeHandlers>
 </configuration>
