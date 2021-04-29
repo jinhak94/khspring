@@ -10,53 +10,58 @@ import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 import org.apache.ibatis.type.TypeHandler;
 
+/**
+ * PreparedStatement의 ?를 세팅
+ * boolean ---> setString
+ */
+
 @MappedTypes(boolean.class)
 @MappedJdbcTypes(JdbcType.CHAR)
 public class BooleanCharTypeHandler implements TypeHandler<Boolean> {
-
+	
 	   public Boolean getResult(ResultSet rs, String columnName) throws SQLException {
 	        String s = rs.getString(columnName);
-
+	
 	        return parseBoolean(s);
 	    }
-
+	
 	    public Boolean getResult(ResultSet rs, int columnIndex) throws SQLException {
 	        String s = rs.getString(columnIndex);
-
+	
 	        return parseBoolean(s);
 	    }
-
+	
 	    public Boolean getResult(CallableStatement cs, int columnIndex)
 	        throws SQLException {
 	        String s = cs.getString(columnIndex);
-
+	
 	        return parseBoolean(s);
 	    }
-
+	
 	    public void setParameter(PreparedStatement ps, int i, Boolean bool,
 	        JdbcType jdbcType) throws SQLException {
-
+	
 	        ps.setString(i, parseString(bool));
 	    }
-
+	
 	    private boolean parseBoolean(String s) {
 	        if (s == null) {
 	            return false;
 	        }
-
+	
 	        s = s.trim().toUpperCase();
-
+	
 	        if (s.length() == 0) {
 	            return false;
 	        }
-
+	
 	        return "Y".equals(s);
 	    }
-
+	
 	    private String parseString(Boolean bool) {
 	        return (bool != null && bool == true) ? "Y" : "N";
 	    }
 
-	}
+}
 
 

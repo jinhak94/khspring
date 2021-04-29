@@ -228,6 +228,33 @@ where rnum between 6 and 10;
 
 --
 select * from board order by no desc;
+select * from attachment;
+desc attachment;
+
+-- mybatis collection
+-- board(1) : attachment(N) 관계를 하나의 쿼리로 조회
+select
+    b.*,
+    a.no attach_no,
+    a.board_no,
+    a.original_filename,
+    a.renamed_filename,
+    a.upload_date,
+    a.download_count,
+    a.status
+from
+    board b
+  left join
+    attachment a
+      on b.no = a.board_no
+where b.no = 63;
+
+
+
+
+
+
+
 
 
 

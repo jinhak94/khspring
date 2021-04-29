@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member"> <!-- #6.2 mapper location에 포함됨 -->
+<!-- Navigator view의 target/classes/mapper/**/*.xml -->
+	<insert id="memberEnroll">
+	<!-- String -> char, varchar2
+	int, double -> number
+	Date -> date
+	String[] -> varchar2 
+	-->
+		insert into 
+			member
+		values(
+			#{id},
+			#{password},
+			#{name},
+			#{gender},
+			#{birthday},
+			#{email},
+			#{phone},
+			#{address},
+			#{hobby},
+			default,
+			default
+		)
+	</insert>
+	<select id="selectOneMember" resultMap="memberMap">
+		select
+			*
+		from
+			member
+		where
+			id = #{id}
+	</select>
+	
+	<update id="updateMember">
+		update 
+			member 
+		set 
+			name = #{name}, 
+			gender = #{gender}, 
+			birthday = #{birthday}, 
+			email = #{email}, 
+			phone = #{phone}, 
+			address = #{address}, 
+			hobby = #{hobby} 
+		where 
+			id = #{id}
+	</update>
+	
+   <select id="selectAll" resultType="member">
+      select
+          *
+      from 
+          member
+   </select>
+
+	<select id="getTotalMember" resultType="_int">
+		select
+			count(*)
+		from
+			member
+	</select>
+	
+	<resultMap type="member" id="memberMap">
+	<!-- 안해도 됨. 이미 mybatis.config에 해줌. -->
+<!-- 		<result column="enroll_date" property="enrollDate"/> -->
+	</resultMap>
+</mapper>

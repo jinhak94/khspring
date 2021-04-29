@@ -1,0 +1,24 @@
+package com.kh.spring.member.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * @RestController : 모든 handler가 @ResponseBody 처리된다.
+ * (@Controller + @Component)
+ * 
+ */
+
+@Slf4j
+@RestController
+@RequestMapping("/member")
+public class MemberRestController {
+
+	@GetMapping("")
+	public List<Member> memberList(){
+		List<Member> list = null;
+		
+		return list;
+	}
+}

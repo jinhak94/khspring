@@ -1,0 +1,14 @@
+package com.kh.spring.member.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @RestController : 모든 handler가 @ResponseBody 처리된다.
+ * (@Controller + @Component)
+ * 
+ */
+
+@RestController
+public class MemberRestController {
+
+}

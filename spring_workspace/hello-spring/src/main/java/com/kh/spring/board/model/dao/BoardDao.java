@@ -20,4 +20,10 @@ public interface BoardDao {
 
 	List<Attachment> selectAttachList(int no);
 
+	Board selectOneBoardCollection(int no);
+
+	Attachment selectOneAttachment(int no);
+
+	List<String> checkBoardList(String searchTitle);
+
 }

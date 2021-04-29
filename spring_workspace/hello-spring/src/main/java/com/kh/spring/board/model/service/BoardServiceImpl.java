@@ -69,6 +69,21 @@ public class BoardServiceImpl implements BoardService {
 		
 		return board;
 	}
+
+	@Override
+	public Board selectOneBoardCollection(int no) {
+		return boardDao.selectOneBoardCollection(no);
+	}
+
+	@Override
+	public Attachment selectOneAttachment(int no) {
+		return boardDao.selectOneAttachment(no);
+	}
+
+	@Override
+	public List<String> checkBoardList(String searchTitle) {
+		return boardDao.checkBoardList(searchTitle);
+	}
 	
 	//service에서 board, attachment 갔다오고
 	//하나의 객체를 리턴

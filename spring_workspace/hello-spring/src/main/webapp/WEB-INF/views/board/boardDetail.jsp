@@ -21,15 +21,26 @@ div#board-container label.custom-file-label{text-align:left;}
 		   name="memberId" 
 		   value="${board.memberId}" readonly required>
 	<c:forEach items="${board.attachList}" var="file" varStatus="vs">
-		<button type="button" 
-				class="btn btn-outline-success btn-block">
-			첨부파일 - ${file.originalFileName}
-		</button>
+	   <button type="button" 
+	         class="btn btn-outline-success btn-block"
+	         onclick="fileDownload(${file.no});">
+	      첨부파일 - ${file.originalFileName}
+	   </button>
 	</c:forEach>
     <textarea class="form-control" name="content" 
     		  placeholder="내용" required>${board.content}</textarea>
     <input type="number" class="form-control" name="readCount" title="조회수"
 		   value="${board.readCount}" readonly>
 	<input type="datetime-local" class="form-control" name="regDate" 
-		   value='<fmt:formatDate value="${board.regDate}" pattern="yyyy-MM-dd"/>'></div>
+		   value='<fmt:formatDate value="${board.regDate}" pattern="yyyy-MM-dd'T'HH:mm:ss"/>'>
+</div>
+
+<script>
+function fileDownload(no){
+// 	location.href = "${pageContext.request.contextPath}/board/fileDownload.do?no=" + no;
+	location.href = "${pageContext.request.contextPath}/board/responseEntity/fileDownload.do?no=" + no;
+}
+
+</script>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include>

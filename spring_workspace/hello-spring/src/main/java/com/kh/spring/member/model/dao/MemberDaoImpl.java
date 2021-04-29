@@ -1,5 +1,9 @@
 package com.kh.spring.member.model.dao;
 
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,5 +29,20 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public int updateMember(Member member) {
 		return session.update("member.updateMember", member);
+	}
+
+	@Override
+	public List<Member> selectAll(Map<String, Object> param) {
+		int cPage = (int)param.get("cPage");
+		int limit = (int)param.get("numPerPage");
+		int offset = (cPage -1)* limit;
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		return session.selectList("member.selectAll", null, rowBounds);
+
+	}
+
+	@Override
+	public int getTotalMember() {
+		return session.selectOne("member.getTotalMember");
 	}
 }

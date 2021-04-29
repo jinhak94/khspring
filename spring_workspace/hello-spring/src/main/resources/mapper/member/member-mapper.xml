@@ -50,6 +50,22 @@
 			id = #{id}
 	</update>
 	
+   <select id="selectAll" resultType="member">
+      select
+          *
+      from 
+          member
+      order by
+      	enroll_date desc
+   </select>
+
+	<select id="getTotalMember" resultType="_int">
+		select
+			count(*)
+		from
+			member
+	</select>
+	
 	<resultMap type="member" id="memberMap">
 	<!-- 안해도 됨. 이미 mybatis.config에 해줌. -->
 <!-- 		<result column="enroll_date" property="enrollDate"/> -->
