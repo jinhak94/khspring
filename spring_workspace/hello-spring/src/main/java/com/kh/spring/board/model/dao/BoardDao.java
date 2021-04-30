@@ -26,4 +26,6 @@ public interface BoardDao {
 
 	List<String> checkBoardList(String searchTitle);
 
+	List<Map<String, Object>> selectBoardByTitle(String searchTitle);
+
 }

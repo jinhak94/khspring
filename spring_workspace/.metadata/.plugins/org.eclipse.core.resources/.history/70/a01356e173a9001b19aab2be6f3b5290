@@ -1,0 +1,9 @@
+package com.kh.spring.model.service;
+
+import com.kh.spring.model.dao.MenuDao;
+
+public class MenuServiceImpl implements MenuService {
+
+	@Autowired
+	private MenuDao menuDao;
+}

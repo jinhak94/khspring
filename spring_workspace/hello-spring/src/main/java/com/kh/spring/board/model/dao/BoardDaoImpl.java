@@ -71,5 +71,10 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public List<String> checkBoardList(String searchTitle) {
 		return session.selectList("board.checkBoardList", searchTitle);
+	}
+
+	@Override
+	public List<Map<String, Object>> selectBoardByTitle(String searchTitle) {
+		return session.selectList("board.selectBoardByTitle", searchTitle);
 	}	
 }

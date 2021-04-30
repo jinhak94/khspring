@@ -80,9 +80,11 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.selectOneAttachment(no);
 	}
 
+
 	@Override
-	public List<String> checkBoardList(String searchTitle) {
-		return boardDao.checkBoardList(searchTitle);
+	public List<Map<String, Object>> selectBoardByTitle(String searchTitle) {
+		// TODO Auto-generated method stub
+		return boardDao.selectBoardByTitle(searchTitle);
 	}
 	
 	//service에서 board, attachment 갔다오고

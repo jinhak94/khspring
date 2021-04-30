@@ -1,0 +1,15 @@
+package com.kh.spring;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class SpringBootController {
+
+	@GetMapping("/")
+	@ResponseBody
+	public String home() {
+		return "springbooooooooooooooot!";
+	}
+}

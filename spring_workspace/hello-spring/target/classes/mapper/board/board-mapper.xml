@@ -113,6 +113,15 @@
       where
          no = #{no}
    </select>
+   <select id="selectBoardByTitle" resultType="map">
+    select
+    	no "no",
+    	title "title"
+   	from
+   		board
+   	where
+   		title like '%' || #{searchTitle} ||'%'
+   </select>
    <resultMap type="attachment" id="attachmentMap">
       <result column="status" property="status" jdbcType="CHAR" javaType="_boolean" typeHandler="BooleanCharTypeHandler"/>
    </resultMap>

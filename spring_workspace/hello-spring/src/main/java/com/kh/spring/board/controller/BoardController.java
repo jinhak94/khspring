@@ -34,7 +34,6 @@ import com.kh.spring.board.model.service.BoardService;
 import com.kh.spring.board.model.vo.Attachment;
 import com.kh.spring.board.model.vo.Board;
 import com.kh.spring.common.HelloSpringUtils;
-import com.kh.spring.member.model.vo.Member;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -246,20 +245,18 @@ public class BoardController {
 		   				 .body(resource);
 	   }	   
 
-	   @GetMapping("/checkBoardList.do")
-	   @ResponseBody //우리가 java로 처리한 응답을 JSON으로 변환해서 응답메세지에 직접 써줌
-	    public ResponseEntity<?> checkBoardList(
-                @RequestParam String title
-            ) {
-        
-        List<String> list = boardService.checkBoardList(title);
-        log.debug("{}", title);
-        log.debug("{}", list);
-        
-        return ResponseEntity.ok()
-                            .body(list);
-    }
+   @GetMapping("/searchTitle.do")
+   @ResponseBody //우리가 java로 처리한 응답을 JSON으로 변환해서 응답메세지에 직접 써줌
+    public List<Map<String,Object>> searchTitle(@RequestParam String searchTitle)
+    {
+	   log.debug("searchTitle = {}", searchTitle);
+	   List<Map<String, Object>> list = boardService.selectBoardByTitle(searchTitle);
+	   log.debug("list = {}", list);
 
+	   
+	   
+	   return list;
+    }
 }
 
 

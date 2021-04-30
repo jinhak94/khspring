@@ -1,0 +1,6 @@
+package com.kh.spring.model.service;
+
+public class MenuServiceImpl implements MenuService {
+
+	
+}

@@ -1,0 +1,25 @@
+package com.kh.spring.model.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.kh.spring.model.vo.Menu;
+
+@Repository
+public class MenuDaoImpl implements MenuDao{
+
+	@Autowired
+	private SqlSessionTemplate session;
+
+	@Override
+	public List<Menu> selectMenuList() {
+		
+		// TODO Auto-generated method stub
+		return session.selectList("menu.selectMenuList");
+	}
+
+
+}
