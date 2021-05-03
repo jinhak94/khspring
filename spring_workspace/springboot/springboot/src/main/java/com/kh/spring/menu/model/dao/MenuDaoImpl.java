@@ -23,6 +23,26 @@ public class MenuDaoImpl implements MenuDao {
 	public List<Menu> selectTypeMenuList(String type) {
 		return session.selectList("menu.selectTypeMenuList", type);
 	}
+
+	@Override
+	public int insertMenu(Menu menu) {
+		return session.insert("menu.insertMenu", menu);
+	}
+
+	@Override
+	public Menu selectMenu(int id) {
+		return session.selectOne("menu.selectMenu", id);
+	}
+
+	@Override
+	public int updateMenu(Menu menu) {
+		return session.update("menu.updateMenu",menu);
+	}
+
+	@Override
+	public int deleteMenu(int id) {
+		return session.delete("menu.deleteMenu",id);
+	}
 	
 	
 }

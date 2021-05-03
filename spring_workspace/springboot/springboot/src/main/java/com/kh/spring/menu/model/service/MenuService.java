@@ -10,4 +10,12 @@ public interface MenuService {
 
 	List<Menu> selectTypeMenuList(String type);
 
+	int insertMenu(Menu menu);
+
+	Menu selectMenu(int id);
+
+	int updateMenu(Menu menu);
+
+	int deleteMenu(int id);
+
 }

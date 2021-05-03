@@ -1,0 +1,5 @@
+package com.kh.spring.menu.model.exception;
+
+public class MenuNotFoundException extends RuntimeException {
+
+}
