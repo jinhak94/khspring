@@ -339,6 +339,63 @@ Insert into SPRING.MENU (ID,RESTAURANT,NAME,PRICE,TYPE,TASTE) values (29,'진씨
   ALTER TABLE "SPRING"."MENU" MODIFY ("NAME" NOT NULL ENABLE);
   ALTER TABLE "SPRING"."MENU" MODIFY ("RESTAURANT" NOT NULL ENABLE);
 
+--spring-security
 
+select
+    *
+from
+    member;
 
+-- 회원별 복수개의 권한을 관리하는 테이블 authorities
+create table authorities (
+    id varchar2(20),
+    auth varchar2(50), -- ROLE_USER, ROLE_ADMIN, ROLE_SALES, ROLE_HR, ROLE_MANAGER
+    constraint pk_authorities primary key(id, auth),
+    constraint fk_authorities_member_id foreign key(id) references member(id)
+);
 
+insert into
+    authorities(id, auth)
+values(
+    'abcde', 'ROLE_USER'
+);
+
+insert into
+    authorities(id, auth)
+values(
+    'admin','ROLD_ADMIN'
+);
+
+insert into
+    authorities(id, auth)
+values(
+    'admin','ROLD_USER'
+);
+
+select
+    *
+from
+    member
+where
+    id = 'admin';
+
+select
+    *
+from
+    authorities
+where
+    id = 'admin';
+    
+commit;
+
+--member -authorities join
+
+select
+    *
+from
+     member m
+    left join
+     authorities a
+        on m.id = a.id
+where
+    m.id = 'admin';

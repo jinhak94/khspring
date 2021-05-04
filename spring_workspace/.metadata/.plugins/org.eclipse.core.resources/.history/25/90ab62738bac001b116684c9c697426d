@@ -1,0 +1,26 @@
+package com.kh.spring.member.model.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.kh.spring.member.model.dao.MemberDao;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class MemberServiceImpl implements MemberService {
+	
+	@Autowired
+	private MemberDao memberDao;
+
+	/**
+	 * @return UserDetails를 상속한 Member객체 리턴
+	 */
+	@Override
+	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
+		return null;
+	}
+}

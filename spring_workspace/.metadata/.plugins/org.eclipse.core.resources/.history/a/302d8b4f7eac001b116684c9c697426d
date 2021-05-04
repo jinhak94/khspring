@@ -1,0 +1,30 @@
+package com.kh.spring.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+	/**
+	 * WebSecurity 객체를 통해 인증대상에서 제외될 자원을 설정
+	 */
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		//webapp 밑의 resources 자원들을 요청하면 검사하지 않음.
+		web.ignoring().antMatchers("/resources/**");
+	}
+
+	/**
+	 * HttpSecurity 객체를 통해 인증/권한, 로그인/로그아웃 등을 설정
+	 */
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		
+	}
+
+}

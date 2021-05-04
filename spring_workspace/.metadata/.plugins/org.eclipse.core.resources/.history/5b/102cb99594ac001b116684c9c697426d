@@ -1,0 +1,59 @@
+package com.kh.spring.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+	/**
+	 * WebSecurity 객체를 통해 인증대상에서 제외될 자원을 설정
+	 */
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		//webapp 밑의 resources 자원들을 요청하면 검사하지 않음.
+		web.ignoring().antMatchers("/resources/**");
+	}
+
+	/**
+	 * HttpSecurity 객체를 통해 인증/권한, 로그인/로그아웃 등을 설정
+	 */
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests()
+		.antMatchers("/member/**").authenticated() //인증된 사용자만
+		.antMatchers("/board/**").authenticated()  //인증된 사용자만
+		.antMatchers("/admin/**").authenticated()  //인증된 사용자만
+		.antMatchers("/").permitAll(); //모두 허용
+	
+		http.formLogin()
+			.loginPage("/member/memberLogin.do")		  // GET /login
+			.loginProcessingUrl("/member/memberLogin.do") //POST /login
+			.usernameParameter("id")
+			.passwordParameter("password")
+			.defaultSuccessUrl("/")
+			.permitAll();
+		
+		// 로그아웃은 반드시 POST 요청으로 처리해야 함
+		http.logout()
+			.logoutUrl("/member/memberLogout.do") // POST
+			.logoutSuccessUrl("/")
+			.invalidateHttpSession(true);
+		
+//		post 요청은 jsp에서 form:form으로 써야함
+//		post 요청은 csrf 토큰을 발행해야함.
+	}
+}
+
+
+
+
+
+
+
+
+
