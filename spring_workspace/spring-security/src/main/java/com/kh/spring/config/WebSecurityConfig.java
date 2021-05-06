@@ -1,5 +1,7 @@
 package com.kh.spring.config;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 import com.kh.spring.member.model.service.MemberService;
 
@@ -19,6 +23,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private DataSource dataSource;
+	
+	@Bean
+	public PersistentTokenRepository tokenRepository() {
+		JdbcTokenRepositoryImpl tokenRepository = 
+				new JdbcTokenRepositoryImpl();
+		tokenRepository.setDataSource(dataSource);
+		return tokenRepository;
+	}
 	
 	/**
 	 * 클래스레벨에 작성한 @Configuration 하위에서 작동.
@@ -47,8 +62,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers("/member/**").authenticated() //인증된 사용자만
-		.antMatchers("/board/**").authenticated()  //인증된 사용자만
-		.antMatchers("/admin/**").authenticated()  //인증된 사용자만
+		.antMatchers("/board/**").hasRole(MemberService.ROLE_USER)  //인증된 사용자만
+		.antMatchers("/admin/**").hasRole(MemberService.ROLE_ADMIN)  //인증된 사용자만
 		.antMatchers("/").permitAll(); //모두 허용
 	
 		http.formLogin()
@@ -59,6 +74,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.defaultSuccessUrl("/")
 			.permitAll();
 		
+		//remember-me 기능 : session timeout 이상으로 인증을 유지
+		http.rememberMe()
+			.key("spring-security-app") // application별 고유문자열
+			.tokenValiditySeconds(60 * 60 * 24 * 14) // 14일은 기본값
+			.tokenRepository(tokenRepository()); //database관련정보 제공
+		
+		
 		// 로그아웃은 반드시 POST 요청으로 처리해야 함
 		http.logout()
 			.logoutUrl("/member/memberLogout.do") // POST
@@ -66,9 +88,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.invalidateHttpSession(true);
 		
 //		post 요청은 jsp에서 form:form으로 써야함
-//		post 요청은 csrf 토큰을 발행해야함.
+//		form:form은 csrf 토큰을 발행해야함.
 		
-		
+		//접근권한 없음 페이지 연결
+		http.exceptionHandling()
+			.accessDeniedPage("/error/accessDenied.do");
 	}
 
 	/**

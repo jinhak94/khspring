@@ -363,13 +363,13 @@ values(
 insert into
     authorities(id, auth)
 values(
-    'admin','ROLD_ADMIN'
+    'admin','ROLE_ADMIN'
 );
 
 insert into
     authorities(id, auth)
 values(
-    'admin','ROLD_USER'
+    'admin','ROLE_USER'
 );
 
 select
@@ -399,3 +399,20 @@ from
         on m.id = a.id
 where
     m.id = 'admin';
+    
+select * from member;
+select * from authorities;
+
+select * from member;
+
+create table persistent_logins (
+    username varchar2(64) not null,
+    series varchar2(64) primary key,   --접속한 브라우저 별 고유한 문자열 값 
+    token varchar2(64) not null,    --username, password, expiry time 등을 hashing한 값
+    last_used timestamp not null
+);
+
+select * from persistent_logins;
+
+
+  SELECT * FROM ALL_TABLES WHERE OWNER='SPRING';

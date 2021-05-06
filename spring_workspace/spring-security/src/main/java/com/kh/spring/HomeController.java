@@ -24,4 +24,8 @@ public class HomeController {
 		
 	}
 
+	@GetMapping("/error/accessDenied.do")
+	public void accessDenied() {
+		
+	}
 }
